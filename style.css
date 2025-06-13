@@ -1,0 +1,156 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Prompt', sans-serif;
+}
+
+body {
+    background-color: #eae7b9;
+    color: #333;
+    line-height: 1.6;
+    font-size: 16px;
+    min-height: 100vh;
+}
+
+/* Navbar */
+
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content:center ;
+    height: 200px;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-img {
+    height: 100%;
+    object-fit: contain;
+}
+
+.menu {  
+    width: 90%;
+    min-width: 850px;
+    margin: 0 auto;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
+    overflow-x: auto;
+    white-space: nowrap;
+    box-sizing: border-box;
+}
+
+
+.box-menu {  
+    width: 100%;
+    min-width: 150px;
+    height: 40px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid #b99760;
+    transition: border-color 0.3s ease, transform 0.3s ease;
+}
+.text-menu {
+    text-decoration: none;
+    color: #444;
+    transition: color 0.3s ease;
+    
+}
+
+.box-menu:hover {
+    border: solid #856d48;
+}
+
+.box-menu:hover .text-menu {
+    color: #b99760;
+}
+
+/* content */
+
+.cake-content {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    position: relative;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.content-wrapper {     
+    width: 90%;
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.body-img {
+    position: relative;
+    overflow: hidden;
+    margin: auto;
+    margin-top: 20px;
+    width: 100%;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    background-color: #b99760;  
+}
+
+
+.gallery-item:hover {
+    transform: scale(1.05);
+}
+
+/* เลื่อนข้างล่างเ\อง */
+.gallery {
+  display: flex;
+  gap: 12px;
+  overflow-x: scroll;           /* ✅ อนุญาตให้ scroll แนวนอน */
+  scroll-behavior: smooth;
+  scrollbar-width: thin;      /* สำหรับ Firefox */
+  -webkit-overflow-scrolling: touch; /* ✅ สำหรับ iOS ลื่นนิ้ว */
+  scrollbar-width: none;
+}
+.gallery-wrapper {
+  position: relative;
+  overflow: hidden; /* ❗️สำคัญ */
+}
+.gallery::-webkit-scrollbar {
+  display: none;              /* Chrome, Safari */
+}
+
+.gallery-item {
+    flex: 0 0 auto;
+    width: 180px;
+    height: 140px;
+    object-fit: cover;
+    border: 5px solid white;
+    scroll-snap-align: start;
+    transition: transform 0.3s ease;
+}
+.gallery-wrapper {
+    overflow: hidden;
+    width: 100%;
+    overflow-x: auto; 
+    margin-top: 20px
+}
+
+/* ลูป animation */
+@keyframes scroll-left {
+    0% {
+        transform: translatex(0)
+    }
+    100% {
+        transform: translatex(5);
+    }
+}
+.gallery-item.active {
+  outline: 3px solid #b99760;
+  outline-offset: -3px;
+}
